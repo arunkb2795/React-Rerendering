@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Child from './Child';
-export default function Parent() {
+export default function Parent(props) {
+  const { children } = props;
   const [count, setCount] = useState(0);
   console.log('Parent Rendering...');
   return (
@@ -10,7 +11,7 @@ export default function Parent() {
       <button onClick={() => setCount((c) => c + 1)}>Increment</button>
       <button onClick={() => setCount((c) => c - 1)}>Decrement</button>
       <button onClick={() => setCount(0)}>Reset</button>
-      <Child />
+      {children}
     </div>
   );
 }
