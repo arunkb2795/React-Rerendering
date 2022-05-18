@@ -1,16 +1,9 @@
-## Same element reference
+## React Memo
 
-- if we pass a child component as children of parent component then “Unnecessary renders can be avioided.
+- ReactMemo is a higher order component,and that component used used to wrap the component.
 
-- In React, when a parent component renders, React will recursively render all of its child
-  components.
+* In React, when a parent component renders, a child component might un-necessarily render.
+  To optimize this behaviour, you can use React.memo and pass in the child component.
 
-- “Unnecessary renders” where the child component goes through the render phase but not the
-  commit phase.
-
-- You can extract the expensive child component and instead pass it down as props to the parent
-  component.
-
-- Whenever there is a re-render caused by a change in the state of the parent component, React
-  will optimize the re-render for you by knowing that the props has to be referencing the same
-  element before and after the render.
+* React.memo will perform a shallow comparison of the previous and new props and re-render
+  the child component only if the props have changed.
