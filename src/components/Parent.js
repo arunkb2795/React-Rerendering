@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Child from './Child';
+
 export default function Parent(props) {
   const { children } = props;
   const [count, setCount] = useState(0);

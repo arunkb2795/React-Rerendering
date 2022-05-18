@@ -1,5 +1,16 @@
-## Parent and Child Rerendering
+## Same element reference
 
-- When a parent component renders, React will recursively render all of its child components.
-- New state same as old state after initial render? Both parent and child do not re-render.
-- New state same as old state after re-renders? Parent re-renders one more time but child never re-renders.
+- if we pass a child component as children of parent component then “Unnecessary renders can be avioided.
+
+- In React, when a parent component renders, React will recursively render all of its child
+  components.
+
+- “Unnecessary renders” where the child component goes through the render phase but not the
+  commit phase.
+
+- You can extract the expensive child component and instead pass it down as props to the parent
+  component.
+
+- Whenever there is a re-render caused by a change in the state of the parent component, React
+  will optimize the re-render for you by knowing that the props has to be referencing the same
+  element before and after the render.
